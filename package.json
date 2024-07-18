@@ -2,14 +2,20 @@
   "name": "monibot",
   "version": "1.0.50",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "bun build ./src/index.ts --target=bun --outfile=dist/index.js",
+    "start": "bun dist/index.js",
+    "test": "bun test",
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysiajs/cors": "^1.1.0",
+    "@libsql/kysely-libsql": "^0.4.0",
+    "elysia": "latest",
+    "kysely": "^0.27.4"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "supertest": "^7.0.0"
   },
-  "module": "src/index.js"
+  "module": "dist/index.js"
 }
