@@ -17,7 +17,7 @@ export interface Database {
 
 export interface LogsTable {
     id: Generated<string>;
-    date: string;
+    date: string | Date;
     hostname: string;
     log_message: string;
 }

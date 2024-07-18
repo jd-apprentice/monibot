@@ -8,16 +8,8 @@ const findAlllogs = async (query: Query) => {
         .offset(Number(query.offset) || 0)
         .limit(Number(query.limit) || 10)
 
-    if (query.from) {
-        response = response.where('date', '>=', query.from)
-    }
-
-    if (query.to) {
-        response = response.where('date', '<=', query.to)
-    }
-
     return response.execute()
-};
+}
 
 const findLogByIdOrHostname = async (value: string, query: Query) => {
     return db
